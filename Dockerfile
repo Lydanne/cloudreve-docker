@@ -1,7 +1,7 @@
 FROM centos
 LABEL maintainer="wm 15804854160@163.com"
 WORKDIR /core
-COPY ./ ./
+COPY ./src ./
 RUN chmod +x ./bin/cloudreve
 RUN yum install -y make
 RUN cd ./aria2 && make install
