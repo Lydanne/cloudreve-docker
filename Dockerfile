@@ -5,8 +5,8 @@ COPY ./src ./
 RUN chmod +x ./bin/cloudreve
 RUN yum install -y make
 RUN cd ./aria2 && make install
-RUN aria2c --conf /core/aria2/conf/aria2.conf
-CMD ./bin/cloudreve -c ./etc/conf.ini > ./etc/log.txt
+CMD ./bin/cloudreve -c ./etc/conf.ini > ./etc/log.txt \
+  && aria2c --conf /core/aria2/conf/aria2.conf
 EXPOSE 83
 
 # docker build -t cloudreve .
