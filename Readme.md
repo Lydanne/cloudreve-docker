@@ -4,7 +4,7 @@
 
 > cloureve-docker 是对 cloudreve 的 docker 封装，这里我们致敬 cloudreve 的开发者，我试过很多的云盘 cloudreve 是最舒服的，而且开发者没有因为割韭菜而阉割免费版，非常感谢。
 >
-> 用户通过 cloudreve-docker 安装 cloudreve 可以快速的体验私人云盘的快感（去 tm 的百度云），并且 cloudreve-docker 提供了 aria2 的离线下载功能，通过简单的配置就可以使用离线下载，并且通过 docker 的数据卷可以非常灵活的对 cloudreve 进行备份、升级、配置以及日志的记录。
+> 用户通过 cloudreve-docker 安装 cloudreve 可以快速的体验私人云盘的快感（去 tm 的百度云），并且 cloudreve-docker 提供了 aria2 的离线下载功能，通过简单的配置就可以使用离线下载，并且通过 docker 的数据卷可以非常灵活的对 cloudreve 进行备份、无缝升级、配置以及日志的记录。
 
 ## 准备
 
@@ -16,9 +16,18 @@
 ```bash
 git clone https://gitee.com/wuma/cloudreve-docker.git
 docker build -t cloudreve ./cloudreve-docker
-docker run -d --name cloudreve -p 83:83 -v /root/log:/core/log cloudreve
-cat /root/log/cloudreve.log
+docker run -d \
+	--name own \
+	-p 83:83 \
+	-v /root/own/log:/core/log \
+	-v /root/own/uploads:/core/uploads \
+	-v /root/own/db:/core/db \
+	-v /root/own/etc:/core/etc \
+  cloudreve
+cat /root/own/log/cloudreve.log
 ```
+
+> 提示：快速体验无缝升级、备份、配置的功能，更多内容请查看下面的可操作数据卷
 
 ### 执行上面的代码后可以得到账号和密码
 
@@ -71,7 +80,9 @@ cat /root/log/cloudreve.log
 我们直接如上所示，我们在创建并启动容器的时候 docker run 使用 -v 参数来指定，下面是个完整的配置。
 
 ```bash
-docker run -d --name cloudreve -p 5212:5212 \
+docker run -d \
+	--name own \
+	-p 83:83 \
 	-v /root/own/log:/core/log \
 	-v /root/own/uploads:/core/uploads \
 	-v /root/own/db:/core/db \
@@ -177,13 +188,13 @@ FileSuffix = ._thumb
 ```bash
 docker run -d \
 	--name own \
-	-p 5212:5212 \
+	-p 83:83 \
 	-v /root/own/log:/core/log \
 	-v /root/own/uploads:/core/uploads \
 	-v /root/own/db:/core/db \
 	-v /root/own/etc:/core/etc \
     cloudreve
-# -p 端口的映射默认端口是5212，如果不映射/core/etc，默认加载cloudreve-docker自带的完整配置文件端口为83
+# -p 端口的映射外部83，内部83
 # -v 端口映射
 # -d 后台运行
 # --name own 这个我给这个容器起的是own这个名字,这个名字很重要,下面的操作已经使用
