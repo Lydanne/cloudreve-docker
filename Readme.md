@@ -1,5 +1,7 @@
 # cloudreve docker
 
+[GitHub](https://github.com/holleworldabc/cloudreve-docker)	[Gitee](https://gitee.com/wuma/cloudreve-docker)	[Docker手册内置安装](https://www.jianshu.com/p/6d44b7d1a267)
+
 > cloureve-docker 是对cloudreve的docker封装，这里我们致敬cloudreve的开发者，我试过很多的云盘cloudreve是最舒服的，而且开发者没有因为割韭菜而阉割免费版，非常感谢。
 >
 > 用户通过cloudreve-docker安装cloudreve可以快速的体验私人云盘的快感（去tm的百度云），并且cloudreve-docker提供了aria2的离线下载功能，通过简单的配置就可以使用离线下载，并且通过docker的数据卷可以非常灵活的对cloudreve进行备份、升级、配置以及日志的记录。
