@@ -9,4 +9,4 @@ RUN aria2c --conf /core/aria2/conf/aria2.conf
 CMD ./bin/cloudreve -c ./etc/conf.ini > ./etc/log.txt
 EXPOSE 83
 
-# docker build -t cloudreve ./src
+# docker build -t cloudreve .
