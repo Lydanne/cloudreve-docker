@@ -84,6 +84,8 @@ cat /root/own/log/cloudreve.log
 
 我们直接如上所示，我们在创建并启动容器的时候 docker run 使用 -v 参数来指定，下面是个完整的配置。
 
+> 不过我们更推荐你使用shell的方式，来启动和创建
+
 ```bash
 docker run -d \
 	--name own \
@@ -188,7 +190,9 @@ FileSuffix = ._thumb
 
 ## 操作 cloudreve
 
-### 创建并运行（第一次使用）
+#### 创建并运行（第一次使用）
+
+> 推荐使用shell方式
 
 ```bash
 docker run -d \
@@ -210,11 +214,15 @@ docker run -d \
 
 ### 启动
 
+> 推荐使用shell方式
+
 ```bash
 docker start own
 ```
 
 ### 重启
+
+> 推荐使用shell方式
 
 ```bash
 docker restart own
@@ -222,18 +230,22 @@ docker restart own
 
 ### 关闭
 
+> 推荐使用shell方式
+
 ```bash
 docker stop own
 ```
 
 ### 开机自启动
 
+> 这个功能，shell暂时不支持
+
 ```bash
 systemctl enable docker
 docker update --restart=always own
 ```
 
-## 升级 cloudreve
+### 升级 cloudreve
 
 > 推荐使用shell方式
 
