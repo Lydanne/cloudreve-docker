@@ -5,6 +5,7 @@
 > cloureve-docker 是对 cloudreve 的 docker 封装，这里我们致敬 cloudreve 的开发者，我试过很多的云盘 cloudreve 是最舒服的，而且开发者没有因为割韭菜而阉割免费版，非常感谢。
 >
 > 用户通过 cloudreve-docker 安装 cloudreve 可以快速的体验私人云盘的快感（去 tm 的百度云），并且 cloudreve-docker 提供了 aria2 的离线下载功能，通过简单的配置就可以使用离线下载，并且通过 docker 的数据卷可以非常灵活的对 cloudreve 进行备份、无缝升级、配置以及日志的记录。
+> 通过使用 Docker 和 shell 的方式快速的搭建 cloureve 的云盘。
 
 ## 准备
 
@@ -295,10 +296,11 @@ cloudreve-stop [云盘容器名]
 #### 更新
 
 ```bash
-cloudreve-update [云盘容器名] [映射的路径]
+cloudreve-update [云盘容器名] [映射的路径] [外部映射端口]
 # 云盘容器名默认为 own
 # 映射的路径 是可操作数据卷在物理机上的位置 默认为 /root
-# cloudreve-update会在/root/own下进行数据卷的映射
+# 	cloudreve-update会在/root/own下进行数据卷的映射
+# 外部映射端口 默认 83
 ```
 
 ## 最后
