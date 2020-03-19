@@ -269,15 +269,13 @@ chmod 775 ./cloudreve-docker/install-shell.sh
 #### 通过 shell 安装 cloudreve-docker
 
 ```bash
-wget -O cloudreve-create https://gitee.com/wuma/cloudreve-docker/raw/master/shell/cloudreve-update
-chmod 775 ./cloudreve-create
-./cloudreve-create [云盘容器名] [映射的路径] [外部映射端口]
+./cloudreve-update [云盘容器名] [映射的路径] [外部映射端口]
 # 云盘容器名默认为 own
 # 映射的路径 是可操作数据卷在物理机上的位置 默认为 /root
-# 	cloudreve-create会在/root/own下进行数据卷的映射
+# 	cloudreve-update会在/root/own下进行数据卷的映射
 # 外部映射端口 默认 83
-# 您可能会注意到cloudreve-create脚本就是cloudreve-update，这不是失误
-# 	因为cloudreve-update也可以实现安装
+# 您可能会注意到安装和更新的脚本一样都得cloudreve-update，这不是失误
+# 	因为cloudreve-update也可以实现首次安装的功能
 ```
 
 #### 启动
