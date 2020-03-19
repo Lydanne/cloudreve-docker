@@ -1,8 +1,13 @@
 #!/bin/bash
 name=$1
+path=$2
 
 if [ ! -n "$name" ]; then
   name="own"
+fi
+
+if [ ! -n "$path" ]; then
+  path="/root"
 fi
 echo $name
 rm -rf ./cloudreve-docker
@@ -13,8 +18,8 @@ docker rm $name
 docker run -d \
 	--name $name \
 	-p 83:83 \
-	-v /root/own/log:/core/log \
-	-v /root/own/uploads:/core/uploads \
-	-v /root/own/db:/core/db \
-	-v /root/own/etc:/core/etc \
+	-v "${path}/${name}/log:/core/log" \
+	-v "${path}/${name}/uploads:/core/uploads" \
+	-v "${path}/${name}/db:/core/db" \
+	-v "${path}/${name}/etc:/core/etc" \
 cloudreve

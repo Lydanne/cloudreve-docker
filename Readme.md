@@ -1,6 +1,6 @@
 # cloudreve docker
 
-**[GitHub](https://github.com/holleworldabc/cloudreve-docker)		 [Gitee](https://gitee.com/wuma/cloudreve-docker)		 [Docker 手册内置安装教程](https://www.jianshu.com/p/6d44b7d1a267)**
+**[GitHub](https://github.com/holleworldabc/cloudreve-docker) [Gitee](https://gitee.com/wuma/cloudreve-docker) [Docker 手册内置安装教程](https://www.jianshu.com/p/6d44b7d1a267)**
 
 > cloureve-docker 是对 cloudreve 的 docker 封装，这里我们致敬 cloudreve 的开发者，我试过很多的云盘 cloudreve 是最舒服的，而且开发者没有因为割韭菜而阉割免费版，非常感谢。
 >
@@ -247,11 +247,11 @@ docker run -d \
 
 > 因为我会关注着 cloudreve 最新版，并且会在发布的第一时间进行测试，测试完成后我会放到 cloudreve-docker 的仓库中，所以大家使用这两句代码就可以快速的升级，并且不会丢失文件和数据。
 
-## 安装使用shell命令
+## 安装使用 shell 命令
 
-> 安装shell命令后可以快速的实现启动、停止、重启、升级、创建并启动的功能。
+> 安装 shell 命令后可以快速的实现启动、停止、重启、升级、创建并启动的功能。
 
-### 安装shell
+### 安装 shell
 
 ```bash
 git clone https://gitee.com/wuma/cloudreve-docker.git
@@ -259,7 +259,10 @@ chmod 775 ./cloudreve-docker/install-shell.sh
 ./cloudreve-docker/install-shell.sh
 ```
 
-### 使用Shell命令
+### 使用 Shell 命令
+
+> 如果你想要和我的配置一样，下面的所又命令都不需要加参数
+> 他会在以 own 的名字创建云盘的镜像名称，并且将数据保存在/root/own 下
 
 #### 启动
 
@@ -285,8 +288,10 @@ cloudreve-stop [云盘容器名]
 #### 更新
 
 ```bash
-cloudreve-update [云盘容器名]
+cloudreve-update [云盘容器名] [映射的路径]
 # 云盘容器名默认为 own
+# 映射的路径 是可操作数据卷在物理机上的位置 默认为 /root
+# cloudreve-update会在/root/own下进行数据卷的映射
 ```
 
 ## 最后
