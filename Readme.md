@@ -247,6 +247,48 @@ docker run -d \
 
 > 因为我会关注着 cloudreve 最新版，并且会在发布的第一时间进行测试，测试完成后我会放到 cloudreve-docker 的仓库中，所以大家使用这两句代码就可以快速的升级，并且不会丢失文件和数据。
 
+## 安装使用shell命令
+
+> 安装shell命令后可以快速的实现启动、停止、重启、升级、创建并启动的功能。
+
+### 安装shell
+
+```bash
+git clone https://gitee.com/wuma/cloudreve-docker.git
+chmod 775 ./cloudreve-docker/install-shell.sh
+./cloudreve-docker/install-shell.sh
+```
+
+### 使用Shell命令
+
+#### 启动
+
+```bash
+cloudreve-start [云盘容器名]
+# 云盘容器名默认为 own
+```
+
+#### 重启
+
+```bash
+cloudreve-restart [云盘容器名]
+# 云盘容器名默认为 own
+```
+
+#### 停止
+
+```bash
+cloudreve-stop [云盘容器名]
+# 云盘容器名默认为 own
+```
+
+#### 更新
+
+```bash
+cloudreve-update [云盘容器名]
+# 云盘容器名默认为 own
+```
+
 ## 最后
 
 首先非常感谢 cloudreve 团队做出来的这个云盘，正因为他们的东西，我才可以去搞 cloudreve-docker 版。

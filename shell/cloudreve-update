@@ -1,0 +1,20 @@
+#!/bin/bash
+name=$1
+
+if [ ! -n "$name" ]; then
+  name="own"
+fi
+echo $name
+rm -rf ./cloudreve-docker
+git clone https://gitee.com/wuma/cloudreve-docker.git
+docker build -t cloudreve ./cloudreve-docker
+docker stop $name
+docker rm $name
+docker run -d \
+	--name $name \
+	-p 83:83 \
+	-v /root/own/log:/core/log \
+	-v /root/own/uploads:/core/uploads \
+	-v /root/own/db:/core/db \
+	-v /root/own/etc:/core/etc \
+cloudreve
