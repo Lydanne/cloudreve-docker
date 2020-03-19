@@ -1,6 +1,6 @@
 # cloudreve docker
 
-[GitHub](https://github.com/holleworldabc/cloudreve-docker) [Gitee](https://gitee.com/wuma/cloudreve-docker) [Docker 手册内置安装](https://www.jianshu.com/p/6d44b7d1a267)
+**[GitHub](https://github.com/holleworldabc/cloudreve-docker)		 [Gitee](https://gitee.com/wuma/cloudreve-docker)		 [Docker 手册内置安装教程](https://www.jianshu.com/p/6d44b7d1a267)**
 
 > cloureve-docker 是对 cloudreve 的 docker 封装，这里我们致敬 cloudreve 的开发者，我试过很多的云盘 cloudreve 是最舒服的，而且开发者没有因为割韭菜而阉割免费版，非常感谢。
 >
@@ -233,7 +233,16 @@ docker update --restart=always own
 ```bash
 git clone https://gitee.com/wuma/cloudreve-docker.git
 docker build -t cloudreve ./cloudreve-docker
-docker restart own
+docker stop own
+docker rm own
+docker run -d \
+	--name own \
+	-p 83:83 \
+	-v /root/own/log:/core/log \
+	-v /root/own/uploads:/core/uploads \
+	-v /root/own/db:/core/db \
+	-v /root/own/etc:/core/etc \
+    cloudreve
 ```
 
 > 因为我会关注着 cloudreve 最新版，并且会在发布的第一时间进行测试，测试完成后我会放到 cloudreve-docker 的仓库中，所以大家使用这两句代码就可以快速的升级，并且不会丢失文件和数据。
