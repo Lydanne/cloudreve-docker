@@ -278,6 +278,13 @@ cloudreve-restart [云盘容器名]
 # 云盘容器名默认为 own
 ```
 
+#### 状态
+
+```bash
+cloudreve-status [云盘容器名]
+# 云盘容器名默认为 own
+```
+
 #### 停止
 
 ```bash
