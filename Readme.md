@@ -1,6 +1,12 @@
 # cloudreve docker
 
-**[GitHub](https://github.com/holleworldabc/cloudreve-docker) [Gitee](https://gitee.com/wuma/cloudreve-docker) [Docker 手册内置安装教程](https://www.jianshu.com/p/6d44b7d1a267)**
+[Cloudreve ](https://github.com/cloudreve/cloudreve)
+
+[GitHub](https://github.com/holleworldabc/cloudreve-docker) 
+
+[Gitee](https://gitee.com/wuma/cloudreve-docker)
+
+[Docker 手册内置安装教程](https://www.jianshu.com/p/6d44b7d1a267)
 
 > cloureve-docker 是对 cloudreve 的 docker 封装，这里我们致敬 cloudreve 的开发者，我试过很多的云盘 cloudreve 是最舒服的，而且开发者没有因为割韭菜而阉割免费版，非常感谢。
 >
@@ -16,15 +22,13 @@
 
 ```bash
 git clone https://gitee.com/wuma/cloudreve-docker.git
-docker build -t cloudreve ./cloudreve-docker
-docker run -d \
-	--name own \
-	-p 83:83 \
-	-v /root/own/log:/core/log \
-	-v /root/own/uploads:/core/uploads \
-	-v /root/own/db:/core/db \
-	-v /root/own/etc:/core/etc \
-  cloudreve
+chmod 775 ./cloudreve-docker/install-shell.sh
+
+# 安装shell命令
+./cloudreve-docker/install-shell.sh
+# 创建启动镜像，cloudreve-update也可以实现更新cloudreve内核的功能
+cloudreve-update
+# 查看密码日志
 cat /root/own/log/cloudreve.log
 ```
 
@@ -230,6 +234,8 @@ docker update --restart=always own
 ```
 
 ## 升级 cloudreve
+
+> 推荐使用shell方式
 
 ```bash
 git clone https://gitee.com/wuma/cloudreve-docker.git
