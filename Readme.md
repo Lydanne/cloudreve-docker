@@ -95,6 +95,12 @@ docker run -d \
 	-v /root/own/db:/core/db \
 	-v /root/own/etc:/core/etc \
     cloudreve
+
+# 在安装了shell命令后，这条命令和上面的这条命令功能一样
+cloudreve-update own /root 83
+# 或者可以更简单
+cloudreve-update
+# 因为 后面的三个参数默认就是own /root 83
 ```
 
 我们通过查看/root/own/log/cloudreve.log 文件来获取账号和密码
