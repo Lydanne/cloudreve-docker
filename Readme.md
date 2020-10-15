@@ -1,12 +1,10 @@
 # cloudreve docker
 
-![sync to gitee](https://github.com/WumaCoder/cloureve-docker/workflows/SyncToGitee/badge.svg)
-
 [Cloudreve ](https://github.com/cloudreve/cloudreve)
 
 [GitHub](https://github.com/WumaCoder/cloudreve-docker)
 
-[Gitee](https://gitee.com/WumaCoder/cloudreve-docker)
+[Gitee](https://gitee.com/WumaCoder/cloudreve-docker) ![Sync](https://github.com/WumaCoder/cloudreve-docker/workflows/SyncToGitee/badge.svg)
 
 [Docker 手册内置安装教程](https://www.jianshu.com/p/6d44b7d1a267)
 
