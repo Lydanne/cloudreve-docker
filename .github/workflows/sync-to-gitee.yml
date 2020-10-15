@@ -1,0 +1,16 @@
+name: SyncToGitee
+on:
+  - push
+  - pull_request
+jobs:
+  sync:
+    name: sync
+    runs-on: ubuntu-latest
+    steps:
+      - name: sync cloudreve-docker
+        uses: Yikun/hub-mirror-action@master
+        with:
+          src: github/WumaCoder
+          dst: gitee/WumaCoder
+          dst_key: ${{ secrets.GITEE_KEY }}
+          white_list: "cloudreve-docker"

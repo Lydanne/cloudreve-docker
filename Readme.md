@@ -1,8 +1,10 @@
 # cloudreve docker
 
+![sync to gitee](https://github.com/WumaCoder/cloureve-docker/workflows/SyncToGitee/badge.svg)
+
 [Cloudreve ](https://github.com/cloudreve/cloudreve)
 
-[GitHub](https://github.com/WumaCoder/cloudreve-docker) 
+[GitHub](https://github.com/WumaCoder/cloudreve-docker)
 
 [Gitee](https://gitee.com/WumaCoder/cloudreve-docker)
 
@@ -21,7 +23,7 @@
 ## 快速体验
 
 ```bash
-git clone https://gitee.com/wuma/cloudreve-docker.git
+git clone https://gitee.com/WumaCoder/cloudreve-docker.git
 chmod 775 ./cloudreve-docker/install-shell.sh
 
 # 安装shell命令
@@ -84,7 +86,7 @@ cat /root/own/log/cloudreve.log
 
 我们直接如上所示，我们在创建并启动容器的时候 docker run 使用 -v 参数来指定，下面是个完整的配置。
 
-> 不过我们更推荐你使用shell的方式，来启动和创建
+> 不过我们更推荐你使用 shell 的方式，来启动和创建
 
 ```bash
 docker run -d \
@@ -198,7 +200,7 @@ FileSuffix = ._thumb
 
 #### 创建并运行（第一次使用）
 
-> 推荐使用shell方式
+> 推荐使用 shell 方式
 
 ```bash
 docker run -d \
@@ -220,7 +222,7 @@ docker run -d \
 
 ### 启动
 
-> 推荐使用shell方式
+> 推荐使用 shell 方式
 
 ```bash
 docker start own
@@ -228,7 +230,7 @@ docker start own
 
 ### 重启
 
-> 推荐使用shell方式
+> 推荐使用 shell 方式
 
 ```bash
 docker restart own
@@ -236,7 +238,7 @@ docker restart own
 
 ### 关闭
 
-> 推荐使用shell方式
+> 推荐使用 shell 方式
 
 ```bash
 docker stop own
@@ -244,7 +246,7 @@ docker stop own
 
 ### 开机自启动
 
-> 这个功能，shell暂时不支持
+> 这个功能，shell 暂时不支持
 
 ```bash
 systemctl enable docker
@@ -253,10 +255,10 @@ docker update --restart=always own
 
 ### 升级 cloudreve
 
-> 推荐使用shell方式
+> 推荐使用 shell 方式
 
 ```bash
-git clone https://gitee.com/wuma/cloudreve-docker.git
+git clone https://gitee.com/WumaCoder/cloudreve-docker.git
 docker build -t cloudreve ./cloudreve-docker
 docker stop own
 docker rm own
@@ -279,7 +281,7 @@ docker run -d \
 ### 安装 shell
 
 ```bash
-git clone https://gitee.com/wuma/cloudreve-docker.git
+git clone https://gitee.com/WumaCoder/cloudreve-docker.git
 chmod 775 ./cloudreve-docker/install-shell.sh
 ./cloudreve-docker/install-shell.sh
 ```
