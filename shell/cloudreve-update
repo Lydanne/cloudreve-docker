@@ -16,7 +16,7 @@ if [ ! -n "$port" ]; then
 fi
 echo $name
 rm -rf ./cloudreve-docker
-git clone https://gitee.com/wuma/cloudreve-docker.git
+git clone https://gitee.com/WumaCoder/cloudreve-docker
 docker build -t cloudreve ./cloudreve-docker
 docker stop $name
 docker rm $name
