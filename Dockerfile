@@ -1,5 +1,5 @@
 FROM centos
-LABEL maintainer="wm 15804854160@163.com"
+LABEL maintainer="wumacoder"
 WORKDIR /core
 COPY ./src ./
 RUN mkdir ./uploads ./db ./log
